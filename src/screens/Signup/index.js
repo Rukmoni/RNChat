@@ -21,7 +21,7 @@ export default ({navigation}) => {
     <View style={styles.container}>
       <Input placeholder="Email" />
       <Input placeholder="Password" />
-      <Button title="Login" onPress={()=> doLogin()}/>
+      <Button title="Signup" onPress={()=> doLogin()}/>
     </View>
   );
 };

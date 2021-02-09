@@ -1,27 +1,29 @@
-const FIND_EMPLOYEE="fine";
-const FIND_CUSTOMER="customer";
 
+import { FETCH_USER} from '../types';
 const INITIAL_STATE = {
-  employee: { name: { first: "" } },
-  customer: { name: { first: "" } },
+  isLoggedin:false,
+ name:'',
+ email:'',
+ phone:''
 };
 
 const authReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
-    case FIND_EMPLOYEE:
+    case FETCH_USER:
+      console.log("FETCH_USER::",payload)
       return {
         ...state,
-        employee: payload,
+        name: payload.name,
+        email:payload.email,
+        phone:payload.phone,
+        isLoggedin:true
       };
-    case FIND_CUSTOMER:
-      return {
-        ...state,
-        customer: payload,
-      };
+  
     default:
       return state;
   }
+  
 };
 
 export default authReducer;
