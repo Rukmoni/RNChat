@@ -14,7 +14,7 @@ import {
   KeyboardAvoidingView,
   SafeAreaView
 } from 'react-native';
-import { StreamChat } from "stream-chat";
+import { StreamChat,StreamClient } from "stream-chat";
 import {
     Chat,
     Channel,
@@ -22,8 +22,10 @@ import {
     MessageInput,
 } from "stream-chat-react-native";
 const { width, height } = Dimensions.get('window');
-
+//var client = new StreamClient("xpfn73x7yzsh","8df43e8qe826ujzdvzkmhf6q4g9kmqxab6jmw8447qqywqx9uph2szkewvvfaezr");
 const chatClient = new StreamChat('vdb7b5xmjh3r');
+
+//console.log("Token",token);
 const userToken =
     'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoid2l0aGVyZWQtc2NlbmUtMyJ9.upmDE_Po0EcsprxFOr3tcQjuiKKe4tmGPxMDaKz_9lE';
 
@@ -33,7 +35,7 @@ const user = {
     image:
     'https://getstream.io/random_png/?id=withered-scene-3&amp;name=Withered+scene',
 };
-
+//chatClient.connectUser(user);
 chatClient.setUser(user, userToken);
 const channel = chatClient.channel("messaging", "curly-cake-8");
 const ChannelScreen = React.memo(({ navigation }) => {

@@ -1,18 +1,21 @@
 import React, {Component} from 'react';
+
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import RootNavigation from './navigator/RootNavigation';
-import Login from './screens/Login';
+import { Provider } from "react-redux";
+import store from "./modules/store";
+
 class App extends Component{
 
     render() {
         return (
       
-            <SafeAreaProvider>
-             
+          
+              <Provider store={store}>
                 <RootNavigation/>
                
-              
-            </SafeAreaProvider>
+                </Provider>
+          
           
         );
       }
